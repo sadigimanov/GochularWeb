@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GOCHULAR — Rəsmi Mağaza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 3 C10.6 3 3 10.6 3 20 C3 29.4 10.6 37 20 37 C29.4 37 37 29.4 37 20 L37 17 L21 17 L21 22 L30.6 22 C29 27.4 25 31 20 31 C13.9 31 9 26.1 9 20 C9 13.9 13.9 9 20 9 C23.6 9 26.7 10.7 28.7 13.4 L33.4 9.9 C30.3 5.7 25.5 3 20 3 Z" fill="none" stroke="#8b1e1e" stroke-width="2.4"/>
+        <path d="M4 27 L34 9" stroke="#d63328" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span class="brand-name">GOCHULAR</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#top">Ana Səhifə</a></li>
+      <li><a href="#magaza">Mağaza</a></li>
+      <li><a href="#komanda">Komanda</a></li>
+    </ul>
+
+    <div class="nav-tools">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="search-input" placeholder="Məhsul axtar...">
+      </div>
+      <button class="icon-btn cart-btn" onclick="toggleCart()" aria-label="Səbəti aç">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6"/>
+          <circle cx="9.5" cy="20.5" r="1.4" fill="currentColor" stroke="none"/>
+          <circle cx="17.5" cy="20.5" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-head">
+    <h3>Səbət</h3>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Bağla">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="empty-note">Səbət boşdur.</p>
+  </div>
+  <div class="cart-summary">
+    <div class="cart-total-row"><span>Cəmi</span><span id="cart-total">₼0.00</span></div>
+    <button class="btn primary full-btn" onclick="goCheckout()">Sifarişi tamamla</button>
+  </div>
+</aside>
+
+<header class="hero" id="top">
+  <div class="wrap hero-wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">VALORANT · RƏSMİ KOMANDA</div>
+      <h1>2026 SERİYASI<br>SATIŞDADIR!</h1>
+      <p>Tünd qırmızı əsas, qılınc-kəsiyi xətti. Meydanda vuruşuruq, tribunada birlikdəyik.</p>
+      <a href="#magaza" class="btn primary hero-cta">Alış-verişə başla <span>→</span></a>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-frame" id="hero-frame">
+        <div class="hero-slide active" data-slide="0">
+          <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 10 L110 10 C118 26 132 30 150 30 C168 30 182 26 190 10 L240 10 L280 70 L245 95 L235 80 L235 330 L65 330 L65 80 L55 95 L20 70 Z" fill="#141318" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M20 70 L60 10 L75 20 L45 78 Z" fill="#8b1e1e"/>
+            <path d="M280 70 L240 10 L225 20 L255 78 Z" fill="#8b1e1e"/>
+            <path d="M65 250 L235 190" stroke="#d63328" stroke-width="6" opacity="0.85"/>
+            <text x="150" y="150" text-anchor="middle" font-family="Teko, sans-serif" font-size="34" fill="#eeeae4" letter-spacing="2">GOCHULAR</text>
+            <text x="150" y="230" text-anchor="middle" font-family="Teko, sans-serif" font-size="80" fill="#eeeae4">07</text>
+          </svg>
+        </div>
+        <div class="hero-slide" data-slide="1">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 30 C60 16 78 8 100 8 C122 8 140 16 140 30 L168 46 L156 78 L140 68 L140 180 L60 180 L60 68 L44 78 L32 46 Z" fill="#141318" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M78 30 C78 44 88 54 100 54 C112 54 122 44 122 30" fill="none" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M60 140 L140 96" stroke="#d63328" stroke-width="5" opacity="0.85"/>
+            <text x="100" y="120" text-anchor="middle" font-family="Teko, sans-serif" font-size="20" fill="#eeeae4" letter-spacing="2">GOCHULAR</text>
+          </svg>
+        </div>
+      </div>
+      <div class="hero-dots">
+        <button class="dot active" onclick="showSlide(0)" aria-label="1-ci şəkil"></button>
+        <button class="dot" onclick="showSlide(1)" aria-label="2-ci şəkil"></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="magaza">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Populyar <span>Məhsullarımız</span></h2>
+    </div>
+
+    <div class="shop-grid" id="shop-grid">
+
+      <article class="product-card" data-name="Forma" data-price="49.90" data-sized="true">
+        <div class="product-visual">
+          <span class="badge new">YENİ</span>
+          <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 10 L110 10 C118 26 132 30 150 30 C168 30 182 26 190 10 L240 10 L280 70 L245 95 L235 80 L235 330 L65 330 L65 80 L55 95 L20 70 Z" fill="#f4f1ee" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M20 70 L60 10 L75 20 L45 78 Z" fill="#8b1e1e"/>
+            <path d="M280 70 L240 10 L225 20 L255 78 Z" fill="#8b1e1e"/>
+            <path d="M65 250 L235 190" stroke="#d63328" stroke-width="6" opacity="0.85"/>
+            <text x="150" y="150" text-anchor="middle" font-family="Teko, sans-serif" font-size="34" fill="#15131a" letter-spacing="2">GOCHULAR</text>
+            <text x="150" y="230" text-anchor="middle" font-family="Teko, sans-serif" font-size="80" fill="#15131a">07</text>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>Rəsmi Forma</h3>
+          <div class="price">₼49.90</div>
+          <div class="product-controls">
+            <select class="size-select">
+              <option>S</option><option>M</option><option selected>L</option><option>XL</option><option>2XL</option>
+            </select>
+            <div class="qty-stepper">
+              <button type="button" onclick="stepQty(this,-1)" aria-label="Azalt">−</button>
+              <span class="qty-val">1</span>
+              <button type="button" onclick="stepQty(this,1)" aria-label="Artır">+</button>
+            </div>
+          </div>
+          <button class="btn dark add-cart" onclick="addToCart(this)">Səbətə əlavə et</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Hoodie" data-price="64.90" data-sized="true">
+        <div class="product-visual">
+          <span class="badge new">YENİ</span>
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60 30 C60 16 78 8 100 8 C122 8 140 16 140 30 L168 46 L156 78 L140 68 L140 180 L60 180 L60 68 L44 78 L32 46 Z" fill="#f4f1ee" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M78 30 C78 44 88 54 100 54 C112 54 122 44 122 30" fill="none" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M60 140 L140 96" stroke="#d63328" stroke-width="5" opacity="0.85"/>
+            <text x="100" y="120" text-anchor="middle" font-family="Teko, sans-serif" font-size="20" fill="#15131a" letter-spacing="2">GOCHULAR</text>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>Hoodie</h3>
+          <div class="price">₼64.90</div>
+          <div class="product-controls">
+            <select class="size-select">
+              <option>S</option><option>M</option><option selected>L</option><option>XL</option><option>2XL</option>
+            </select>
+            <div class="qty-stepper">
+              <button type="button" onclick="stepQty(this,-1)" aria-label="Azalt">−</button>
+              <span class="qty-val">1</span>
+              <button type="button" onclick="stepQty(this,1)" aria-label="Artır">+</button>
+            </div>
+          </div>
+          <button class="btn dark add-cart" onclick="addToCart(this)">Səbətə əlavə et</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Şapka" data-price="24.90" data-sized="false">
+        <div class="product-visual">
+          <span class="badge stock">STOKDA</span>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 90 C40 55 66 30 100 30 C134 30 160 55 160 90 Z" fill="#f4f1ee" stroke="#8b1e1e" stroke-width="3"/>
+            <path d="M30 90 L170 90 L178 104 L22 104 Z" fill="#8b1e1e"/>
+            <path d="M55 90 L145 60" stroke="#d63328" stroke-width="4" opacity="0.85"/>
+            <text x="100" y="80" text-anchor="middle" font-family="Teko, sans-serif" font-size="22" fill="#15131a" letter-spacing="1">G</text>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>Şapka</h3>
+          <div class="price">₼24.90</div>
+          <div class="product-controls">
+            <div class="qty-stepper">
+              <button type="button" onclick="stepQty(this,-1)" aria-label="Azalt">−</button>
+              <span class="qty-val">1</span>
+              <button type="button" onclick="stepQty(this,1)" aria-label="Artır">+</button>
+            </div>
+          </div>
+          <button class="btn dark add-cart" onclick="addToCart(this)">Səbətə əlavə et</button>
+        </div>
+      </article>
+
+      <article class="product-card" data-name="Stiker seti" data-price="7.90" data-sized="false">
+        <div class="product-visual">
+          <span class="badge stock">STOKDA</span>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="20" width="70" height="55" rx="6" fill="#f4f1ee" stroke="#8b1e1e" stroke-width="2.5"/>
+            <rect x="110" y="20" width="70" height="55" rx="6" fill="#f4f1ee" stroke="#d8d2cd" stroke-width="2.5" stroke-dasharray="4 4"/>
+            <rect x="20" y="90" width="70" height="55" rx="6" fill="#f4f1ee" stroke="#d8d2cd" stroke-width="2.5" stroke-dasharray="4 4"/>
+            <rect x="110" y="90" width="70" height="55" rx="6" fill="#f4f1ee" stroke="#8b1e1e" stroke-width="2.5"/>
+            <path d="M32 60 L78 35" stroke="#d63328" stroke-width="4"/>
+            <text x="145" y="128" text-anchor="middle" font-family="Teko, sans-serif" font-size="26" fill="#15131a">G</text>
+          </svg>
+        </div>
+        <div class="product-body">
+          <h3>Stiker Seti</h3>
+          <div class="price">₼7.90</div>
+          <div class="product-controls">
+            <div class="qty-stepper">
+              <button type="button" onclick="stepQty(this,-1)" aria-label="Azalt">−</button>
+              <span class="qty-val">1</span>
+              <button type="button" onclick="stepQty(this,1)" aria-label="Artır">+</button>
+            </div>
+          </div>
+          <button class="btn dark add-cart" onclick="addToCart(this)">Səbətə əlavə et</button>
+        </div>
+      </article>
+
+    </div>
+    <p class="empty-note" id="no-results" style="display:none;">Axtarışa uyğun məhsul tapılmadı.</p>
+  </div>
+</section>
+
+<section id="komanda" class="alt-bg">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Bizim <span>Komanda</span></h2>
+    </div>
+    <div class="roster">
+      <div class="player"><div class="role">Duelist</div><div class="tag">Snayper</div><div class="real">Baş hücumçu</div></div>
+      <div class="player"><div class="role">Controller</div><div class="tag">Duman</div><div class="real">Sahə nəzarəti</div></div>
+      <div class="player"><div class="role">Initiator</div><div class="tag">Açar</div><div class="real">İlk təmas</div></div>
+      <div class="player"><div class="role">Sentinel</div><div class="tag">Qala</div><div class="real">Müdafiə xətti</div></div>
+      <div class="player"><div class="role">IGL</div><div class="tag">Sərkərdə</div><div class="real">Strategiya</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="sifaris">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Sifarişi <span>Tamamla</span></h2>
+    </div>
+    <div class="order-panel">
+      <div class="order-summary" id="order-summary">
+        <p class="empty-note">Səbətiniz boşdur. Əvvəlcə <a href="#magaza">mağazadan</a> məhsul seçin.</p>
+      </div>
+      <form id="order-form">
+        <div class="form-row">
+          <div>
+            <label for="name">Ad Soyad</label>
+            <input id="name" required placeholder="Adını daxil et">
+          </div>
+          <div>
+            <label for="phone">Əlaqə nömrəsi</label>
+            <input id="phone" required placeholder="+994 XX XXX XX XX">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="full">
+            <label for="note">Qeyd (arxa ad / nömrə, istəyə bağlı)</label>
+            <input id="note" placeholder="Məs: SNAYPER · 01">
+          </div>
+        </div>
+        <button type="submit" class="btn primary full-btn order-submit">Sifarişi göndər</button>
+        <div id="confirm"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 3 C10.6 3 3 10.6 3 20 C3 29.4 10.6 37 20 37 C29.4 37 37 29.4 37 20 L37 17 L21 17 L21 22 L30.6 22 C29 27.4 25 31 20 31 C13.9 31 9 26.1 9 20 C9 13.9 13.9 9 20 9 C23.6 9 26.7 10.7 28.7 13.4 L33.4 9.9 C30.3 5.7 25.5 3 20 3 Z" fill="none" stroke="#d63328" stroke-width="2.4"/>
+        <path d="M4 27 L34 9" stroke="#d63328" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <p>GOCHULAR Shop'ta komandamıza dəstək olacaq rəsmi məhsulları tapa bilərsiniz.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sürətli Menyu</h4>
+      <a href="#top">Ana Səhifə</a>
+      <a href="#magaza">Mağaza</a>
+      <a href="#komanda">Komanda</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kömək</h4>
+      <a href="#sifaris">Sifariş</a>
+      <a href="#">Əlaqə</a>
+    </div>
+    <div class="footer-col newsletter">
+      <h4>Xəbər Bülteni</h4>
+      <p>Yeniliklərdən ilk siz xəbərdar olun.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="E-poçtunuzu daxil edin">
+        <button class="btn primary">Abunə ol →</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 GOCHULAR — Bütün hüquqlar qorunur.</span>
+    <div class="socials">
+      <a href="#">INSTAGRAM</a>
+      <a href="#">DISCORD</a>
+      <a href="#">TWITCH</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+</html>
