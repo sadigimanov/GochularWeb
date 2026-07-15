@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">GOCHULAR — Məhsul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="top-bar"></div>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html#top" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 3 C10.6 3 3 10.6 3 20 C3 29.4 10.6 37 20 37 C29.4 37 37 29.4 37 20 L37 17 L21 17 L21 22 L30.6 22 C29 27.4 25 31 20 31 C13.9 31 9 26.1 9 20 C9 13.9 13.9 9 20 9 C23.6 9 26.7 10.7 28.7 13.4 L33.4 9.9 C30.3 5.7 25.5 3 20 3 Z" fill="none" stroke="#8b1e1e" stroke-width="2.4"/>
+        <path d="M4 27 L34 9" stroke="#d63328" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <span class="brand-name">GOCHULAR</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#top">Ana Səhifə</a></li>
+      <li><a href="index.html#magaza">Mağaza</a></li>
+      <li><a href="index.html#komanda">Komanda</a></li>
+    </ul>
+
+    <div class="nav-tools">
+      <button class="icon-btn cart-btn" onclick="toggleCart()" aria-label="Səbəti aç">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 4h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6"/>
+          <circle cx="9.5" cy="20.5" r="1.4" fill="currentColor" stroke="none"/>
+          <circle cx="17.5" cy="20.5" r="1.4" fill="currentColor" stroke="none"/>
+        </svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-head">
+    <h3>Səbət</h3>
+    <button class="cart-close" onclick="toggleCart()" aria-label="Bağla">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <p class="empty-note">Səbət boşdur.</p>
+  </div>
+  <div class="cart-summary">
+    <div class="cart-total-row"><span>Cəmi</span><span id="cart-total">₼0.00</span></div>
+    <button class="btn primary full-btn" onclick="goCheckout()">Sifarişi tamamla</button>
+  </div>
+</aside>
+
+<section id="detail">
+  <div class="wrap">
+    <div class="breadcrumb">
+      <a href="index.html#top">Ana Səhifə</a> / <a href="index.html#magaza">Mağaza</a> / <span id="crumb-title">Məhsul</span>
+    </div>
+
+    <div class="detail-grid product-card" id="detail-card" data-name="" data-price="" data-sized="false">
+      <div class="detail-info">
+        <span class="badge detail-badge" id="detail-badge"></span>
+        <h1 id="detail-title"></h1>
+        <div class="detail-price" id="detail-price"></div>
+        <p class="detail-desc" id="detail-desc"></p>
+
+        <div class="detail-controls">
+          <select class="size-select" id="detail-size-select"></select>
+          <div class="qty-stepper">
+            <button type="button" onclick="stepQty(this,-1)" aria-label="Azalt">−</button>
+            <span class="qty-val">1</span>
+            <button type="button" onclick="stepQty(this,1)" aria-label="Artır">+</button>
+          </div>
+        </div>
+
+        <button class="btn dark add-cart" onclick="addToCart(this)">Səbətə əlavə et</button>
+
+        <div class="info-notes">
+          <div class="info-note">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+            <div><strong>Çatdırılma</strong><span>Bakı daxili 2–4 iş günü, bölgələrə 4–7 iş günü.</span></div>
+          </div>
+          <div class="info-note">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4v6h6"/><path d="M20 20v-6h-6"/><path d="M4 10a8 8 0 0 1 14-5"/><path d="M20 14a8 8 0 0 1-14 5"/></svg>
+            <div><strong>Ölçü dəyişimi</strong><span>Yanlış ölçü halında 7 gün ərzində dəyişim mümkündür.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-image">
+        <img id="main-image-el" src="" alt="">
+      </div>
+
+      <div class="thumb-col" id="thumb-col"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 3 C10.6 3 3 10.6 3 20 C3 29.4 10.6 37 20 37 C29.4 37 37 29.4 37 20 L37 17 L21 17 L21 22 L30.6 22 C29 27.4 25 31 20 31 C13.9 31 9 26.1 9 20 C9 13.9 13.9 9 20 9 C23.6 9 26.7 10.7 28.7 13.4 L33.4 9.9 C30.3 5.7 25.5 3 20 3 Z" fill="none" stroke="#d63328" stroke-width="2.4"/>
+        <path d="M4 27 L34 9" stroke="#d63328" stroke-width="2.6" stroke-linecap="square"/>
+      </svg>
+      <p>GOCHULAR Shop'ta komandamıza dəstək olacaq rəsmi məhsulları tapa bilərsiniz.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sürətli Menyu</h4>
+      <a href="index.html#top">Ana Səhifə</a>
+      <a href="index.html#magaza">Mağaza</a>
+      <a href="index.html#komanda">Komanda</a>
+    </div>
+    <div class="footer-col">
+      <h4>Kömək</h4>
+      <a href="index.html#sifaris">Sifariş</a>
+      <a href="#">Əlaqə</a>
+    </div>
+    <div class="footer-col newsletter">
+      <h4>Xəbər Bülteni</h4>
+      <p>Yeniliklərdən ilk siz xəbərdar olun.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="E-poçtunuzu daxil edin">
+        <button class="btn primary">Abunə ol →</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 GOCHULAR — Bütün hüquqlar qorunur.</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/gochular/" target="_blank">INSTAGRAM</a>
+      <a href="https://discord.gg/gochular" target="_blank">DISCORD</a>
+      <a href="https://www.tiktok.com/@gochular" target="_blank">TIKTOK</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/product.js"></script>
+
+</body>
+</html>
