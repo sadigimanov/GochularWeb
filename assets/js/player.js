@@ -100,9 +100,9 @@ const PLAYERS = {
     photo: 'assets/img/players/norkyy.jpg',
     instagram: 'https://www.instagram.com/n0rkyy_/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '800 dpi 0.25 sens',
+    refresh: '300 hz',
+    resolution: '1280:960',
     statsUrl: '#'
   },
     mordecai: {
@@ -112,9 +112,9 @@ const PLAYERS = {
     photo: 'assets/img/players/mordecai.jpg',
     instagram: 'https://www.instagram.com/jaffrloyy/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '800 dpi 0.15 sens',
+    refresh: '144 hz (laptop)',
+    resolution: '1920:1080',
     statsUrl: '#'
   },
     rareemr: {
@@ -125,7 +125,7 @@ const PLAYERS = {
     instagram: 'https://www.instagram.com/rareemr/',
     twitter: '',
     polling: '1600 dpi 0.1 sens',
-    refresh: '240 hz',
+    refresh: '240 hz (laptop)',
     resolution: '1920:1080',
     statsUrl: '#'
   }
