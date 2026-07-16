@@ -16,20 +16,20 @@ const PLAYERS = {
     photo: 'assets/img/players/jafrsai.jpeg',
     instagram: 'https://www.instagram.com/nematjf/',
     twitter: '',
-    polling: '1000hz 800 dpi',
-    refresh: '240 hz',
-    resolution: '1728×1080',
+    polling: '1200 dpi 0.14 sens',
+    refresh: '144 hz (laptop)',
+    resolution: '1920:1080',
     statsUrl: '#'
   },
   therealramin: {
     tag: 'TheRealRamin',
     role: 'Controller',
     agents: 'Omen / Deadlock',
-    photo: 'assets/img/players/therealramin.jpg',
+    photo: 'assets/img/players/theRealRamin.jpeg',
     instagram: 'https://www.instagram.com/therealramin0/',
     twitter: '',
     polling: '800 dpi 0.24 sens',
-    refresh: '144 hz',
+    refresh: '144 hz (laptop)',
     resolution: '1920:1080',
     statsUrl: '#'
   },
@@ -52,21 +52,21 @@ const PLAYERS = {
     photo: 'assets/img/players/mohg.jpg',
     instagram: 'https://www.instagram.com/orxan.0smanli/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '800 dpi 0.27 sens',
+    refresh: '120 hz (laptop)',
+    resolution: '1280:960',
     statsUrl: '#'
   },
   lwarz: {
     tag: 'Lwarz',
     role: 'Duelist',
-    agents: 'Raze / Jett',
+    agents: 'Raze / Jett / Neon',
     photo: 'assets/img/players/lwarz.jpg',
     instagram: 'https://www.instagram.com/nihat.sltnw/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '800 dpi 0.3 sens',
+    refresh: '240 hz',
+    resolution: '1920:1080',
     statsUrl: '#'
   },
   ceasar: {
@@ -76,9 +76,9 @@ const PLAYERS = {
     photo: 'assets/img/players/ceasar.jpg',
     instagram: 'https://www.instagram.com/elchin.akhmed/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '800 dpi 0.2 sens',
+    refresh: '360 hz',
+    resolution: '1920:1080 3k',
     statsUrl: '#'
   },
   dyrose: {
@@ -124,9 +124,9 @@ const PLAYERS = {
     photo: 'assets/img/players/rareemr.jpg',
     instagram: 'https://www.instagram.com/rareemr/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '1600 dpi 0.1 sens',
+    refresh: '240 hz',
+    resolution: '1920:1080',
     statsUrl: '#'
   }
 };
