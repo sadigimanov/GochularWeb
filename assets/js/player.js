@@ -88,9 +88,9 @@ const PLAYERS = {
     photo: 'assets/img/players/dyrose.jpeg',
     instagram: 'https://www.instagram.com/muqumovich/',
     twitter: '',
-    polling: '—',
-    refresh: '—',
-    resolution: '—',
+    polling: '1000 dpi 0.37 sens',
+    refresh: '360 hz',
+    resolution: '1920:1080',
     statsUrl: '#'
   },
   norkyy: {
