@@ -5,6 +5,19 @@ const heroSlideCount = document.querySelectorAll('.hero-slide').length;
 let heroSlideIndex = 0;
 let heroSlideTimer = null;
 
+/* Build one dot per slide automatically, so adding/removing slides in the HTML
+   never requires manually editing the dots. */
+const heroDotsContainer = document.getElementById('hero-dots');
+if(heroDotsContainer){
+  for(let i = 0; i < heroSlideCount; i++){
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `${i + 1}-ci şəkil`);
+    dot.addEventListener('click', () => goToSlide(i));
+    heroDotsContainer.appendChild(dot);
+  }
+}
+
 function showSlide(index){
   heroSlideIndex = index;
   document.querySelectorAll('.hero-slide').forEach((el, i) => el.classList.toggle('active', i === index));

@@ -9,8 +9,8 @@
 */
 
 const PLAYERS = {
-  jafrsai: {
-    tag: 'Jafrsai',
+  jafrrsai: {
+    tag: 'Jafrrsai',
     role: 'IGL',
     agents: 'Raze / Brim / Killjoy',
     photo: 'assets/img/players/jafrsai.jpeg',
@@ -37,7 +37,7 @@ const PLAYERS = {
     tag: 'Zentraa',
     role: 'Sentinel',
     agents: 'Cypher / Viper / Vyse',
-    photo: 'assets/img/players/zentraa.jpg',
+    photo: 'assets/img/players/zentraa.png',
     instagram: 'https://www.instagram.com/sadiq.w3b/',
     twitter: '',
     polling: '800 dpi 0.27 sens',
@@ -49,7 +49,7 @@ const PLAYERS = {
     tag: 'Mohg',
     role: 'Initiator',
     agents: 'Breach',
-    photo: 'assets/img/players/mohg.jpg',
+    photo: 'assets/img/players/mohg.png',
     instagram: 'https://www.instagram.com/orxan.0smanli/',
     twitter: '',
     polling: '800 dpi 0.27 sens',
@@ -61,7 +61,7 @@ const PLAYERS = {
     tag: 'Lwarz',
     role: 'Duelist',
     agents: 'Raze / Jett / Neon',
-    photo: 'assets/img/players/lwarz.jpg',
+    photo: 'assets/img/players/lwarz.png',
     instagram: 'https://www.instagram.com/nihat.sltnw/',
     twitter: '',
     polling: '800 dpi 0.3 sens',
@@ -69,11 +69,11 @@ const PLAYERS = {
     resolution: '1920:1080',
     statsUrl: '#'
   },
-  ceasar: {
-    tag: 'Ceasar',
+  caesar: {
+    tag: 'Caesar',
     role: 'Initiator',
     agents: 'Tejo / Fade / Gekko',
-    photo: 'assets/img/players/ceasar.jpg',
+    photo: 'assets/img/players/caesar.png',
     instagram: 'https://www.instagram.com/elchin.akhmed/',
     twitter: '',
     polling: '800 dpi 0.2 sens',
@@ -97,7 +97,7 @@ const PLAYERS = {
     tag: 'Norkyy',
     role: 'Initiator',
     agents: 'Jett / Brim / Killjoy',
-    photo: 'assets/img/players/norkyy.jpg',
+    photo: 'assets/img/players/norkyy.png',
     instagram: 'https://www.instagram.com/n0rkyy_/',
     twitter: '',
     polling: '800 dpi 0.25 sens',
@@ -109,7 +109,7 @@ const PLAYERS = {
     tag: 'Mordecai',
     role: 'Initiator',
     agents: 'Breach / Fade / Tejo',
-    photo: 'assets/img/players/mordecai.jpg',
+    photo: 'assets/img/players/mordecai.png',
     instagram: 'https://www.instagram.com/jaffrloyy/',
     twitter: '',
     polling: '800 dpi 0.15 sens',
@@ -121,7 +121,7 @@ const PLAYERS = {
     tag: 'rareemr',
     role: 'Duelist',
     agents: 'Jett',
-    photo: 'assets/img/players/rareemr.jpg',
+    photo: 'assets/img/players/rareemr.png',
     instagram: 'https://www.instagram.com/rareemr/',
     twitter: '',
     polling: '1600 dpi 0.1 sens',
