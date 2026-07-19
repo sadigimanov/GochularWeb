@@ -126,6 +126,19 @@ function toggleCart(){
   document.getElementById('cart-overlay').classList.toggle('open');
 }
 
+function toggleNavMenu(){
+  const links = document.querySelector('.nav-links');
+  if(links) links.classList.toggle('open');
+}
+
+/* Close the mobile menu after tapping a link */
+document.addEventListener('click', function(e){
+  if(e.target.closest('.nav-links a')){
+    const links = document.querySelector('.nav-links');
+    if(links) links.classList.remove('open');
+  }
+});
+
 function goCheckout(){
   document.getElementById('cart-panel').classList.remove('open');
   document.getElementById('cart-overlay').classList.remove('open');
