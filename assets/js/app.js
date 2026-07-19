@@ -28,6 +28,10 @@ function nextSlide(){
   showSlide((heroSlideIndex + 1) % heroSlideCount);
 }
 
+function prevSlide(){
+  showSlide((heroSlideIndex - 1 + heroSlideCount) % heroSlideCount);
+}
+
 function startHeroAutoplay(){
   clearInterval(heroSlideTimer);
   heroSlideTimer = setInterval(nextSlide, 4000);
@@ -39,6 +43,21 @@ function goToSlide(index){
 }
 
 startHeroAutoplay();
+
+/* Click left half = previous slide, right half = next slide */
+const heroFrameEl = document.getElementById('hero-frame');
+if(heroFrameEl){
+  heroFrameEl.addEventListener('click', function(e){
+    const rect = heroFrameEl.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    if(clickX < rect.width / 2){
+      prevSlide();
+    } else {
+      nextSlide();
+    }
+    startHeroAutoplay();
+  });
+}
 
 /* SEARCH FILTER */
 document.getElementById('search-input').addEventListener('input', function(){
